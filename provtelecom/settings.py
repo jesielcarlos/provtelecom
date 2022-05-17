@@ -40,11 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'apps.core',
-
-    'allauth',
-    'allauth.account',  
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
+    'bootstrap5',
 ]
 
 SITE_ID = 1
