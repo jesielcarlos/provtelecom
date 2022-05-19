@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'provtelecom',
         'USER': 'postgres',
         'PASSWORD': '123',
-        'HOST': '192.168.0.105',
+        'HOST': '192.168.0.108',
         'PORT': '5432',
     }
 }
@@ -132,7 +132,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
