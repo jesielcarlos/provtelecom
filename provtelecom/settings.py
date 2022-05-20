@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'provtelecom',
         'USER': 'postgres',
         'PASSWORD': '123',
-        'HOST': '192.168.0.108',
+        'HOST': '192.168.0.103',
         'PORT': '5432',
     }
 }
