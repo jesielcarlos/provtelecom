@@ -39,8 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'apps.core',
     'bootstrap5',
+    'apps.core',
+    'apps.profileUser',
+    'apps.finance',
+    'apps.callSystem',
 ]
 
 SITE_ID = 1

@@ -422,7 +422,7 @@ main .recent-orders a{
 .right .sales-analytics .item.customers .icon{
     background: var(--color-success);
 }
-.right .sales-analytics .add-product{
+/* .right .sales-analytics .add-product{
     background-color: transparent;
     border: 2px dashed var(--color-primary);
     color: var(--color-primary);
@@ -441,7 +441,7 @@ main .recent-orders a{
 }
 .right .sales-analytics .add-product div h3{
     font-weight: 600;
-}
+} */
     /* ==============MEDIA QUERY============ */
 @media screen and (max-width:1200px){
     .container{
