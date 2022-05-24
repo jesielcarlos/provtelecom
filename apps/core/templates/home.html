@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 
-{% block insights %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block title_page %}
+    <h1>Dashboard</h1>
+{% endblock %}
+
+{% block date %}
+    <div class="date">
+        <h3 id="date"></h3>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="insights">
     <div class="sales">
         <span class="material-symbols-outlined">analytics</span>
         <div class="middle">
@@ -55,9 +71,8 @@
         </div>
         <small class="text-muted">Last 24 hours</small>
     </div>
-{% endblock %}
-
-{% block orders %}
+</div>
+<div class="recent-orders">
     <h2>Recent Order</h2>
     <table>
         <thead>
@@ -101,6 +116,7 @@
         </tbody>
     </table>
     <a href="#">Show all</a>
+</div>
 {% endblock %}
 
 {% block updates %}
