@@ -55,7 +55,7 @@ body{
     background: var(--color-background);
     color: var(--color-dark);
 }
-.container{
+.box{
     display: grid;
     width: 96%;
     margin: 0 auto;
@@ -138,7 +138,7 @@ aside .close{
 
 /* ========================SIDEBAR ========================= */
 
-aside .sidebar{
+aside .menuside{
     display: flex;
     flex-direction: column;
     height: 86vh;
@@ -148,7 +148,7 @@ aside .sidebar{
 aside h3{
     font-weight: 500;
 }
-aside .sidebar a{
+aside .menuside a{
     display: flex;
     color: var(--color-info-dark);
     margin-left: 2rem;
@@ -158,34 +158,34 @@ aside .sidebar a{
     height: 3.7rem;
     transition: all 300ms ease;
 }
-aside .sidebar a span{
+aside .menuside a span{
     font-size: 1.6rem;
     transition: all 300ms ease;
 }
-aside .sidebar a:last-child{
+aside .menuside a:last-child{
     position: absolute;
     bottom: 2rem;
     width: 100%;
 }
-aside .sidebar a.active{
+aside .menuside a.active{
     background: var(--color-light);
     color: var(--color-primary);
     margin-left: 0;
 }
-aside .sidebar a.active:before{
+aside .menuside a.active:before{
     content: "";
     width: 6px;
     height: 100%;
     background: var(--color-primary);
 }
-aside .sidebar a.active span{
+aside .menuside a.active span{
     color: var(--color-primary);
     margin-left: calc(1rem - 3px);
 }
-aside .sidebar a:hover{
+aside .menuside a:hover{
     color: var(--color-primary);
 }
-aside .sidebar a:hover span{
+aside .menuside a:hover span{
     margin-left: 1rem;
     color: var(--color-primary);
 }
@@ -204,12 +204,13 @@ main .date input[type="date"]{
     background: transparent;
     color: var(--color-dark);
 }
-main .insights{
+main .plans{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1.6rem;
 }
-main .insights > div{
+main .plans > div{
+    min-width: 280px;
     background: var(--color-white);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
@@ -217,43 +218,43 @@ main .insights > div{
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
 }
-main .insights > div:hover{
+main .plans > div:hover{
     box-shadow: none;
 }
-main .insights > div span{
-    background: var(--color-primary);
+main .plans > div span{
+    background: var(--color-success);
     padding: 0.5rem;
     border-radius: 50%;
     color: var(--color-white);
     font-size: 2rem;
 }
-main .insights > div.expenses span{
+main .plans > div.expenses span{
 
     background: var(--color-danger);
 }
-main .insights > div.income span{
+main .plans > div.income span{
     background: var(--color-success);
 }
-main .insights > div .middle{
+main .plans > div .middle{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-main .insights h3{
+main .plans h3{
     margin: 1rem 0 0.6rem;
     font-size: 1rem;
 }
-main .insights .progress{
+main .plans .progress{
     position: relative;
     width: 92px;
     height:92px;
     border-radius: 50%;
 }
-main .insights svg{
+main .plans svg{
     width: 7rem;
     height: 7rem;
 }
-main .insights svg circle{
+main .plans svg circle{
     fill: none;
     stroke: var(--color-primary);
     stroke-width: 14;
@@ -262,19 +263,19 @@ main .insights svg circle{
     stroke-dasharray: 110;
     stroke-dashoffset: 92;
 }
-main .insights .sales svg circle{
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
+main .plans .sales svg circle{
+    stroke-dashoffset: 0;
+    stroke-dasharray: 230;
 }
-main .insights .expenses svg circle{
-    stroke-dashoffset: 20;
-    stroke-dasharray: 80;
+main .plans .expenses svg circle{
+    stroke-dashoffset: 0;
+    stroke-dasharray: 230;
 }
-main .insights .income svg circle{
-    stroke-dashoffset: 35;
-    stroke-dasharray: 110;
+main .plans .income svg circle{
+    stroke-dashoffset: 0;
+    stroke-dasharray: 230;
 }
-main .insights .progress .number{
+main .plans .progress .number{
     position: absolute;
     top: 0;
     left: 0;
@@ -284,7 +285,7 @@ main .insights .progress .number{
     justify-content: center;
     align-items: center;
 }
-main .insights small{
+main .plans small{
     margin-top: 1.3rem;
     display: block;
 }
@@ -444,24 +445,24 @@ main .recent-orders a{
 } */
     /* ==============MEDIA QUERY============ */
 @media screen and (max-width:1200px){
-    .container{
+    .box{
         width: 94%;
         grid-template-columns: 7rem auto 23rem;
     }
     aside .logo h2{
         display: none;
     }
-    aside .sidebar h3{
+    aside .menuside h3{
         display: none;
     }
-    aside .sidebar a{
+    aside .menuside a{
         width: 5.6rem;
     }
-    aside .sidebar a:last-child{
+    aside .menuside a:last-child{
         position: relative;
         margin-top: 1.8rem;
     }
-    main .insights{
+    main .plans{
         grid-template-columns: 1fr;
         gap: 0;
     }
@@ -484,7 +485,7 @@ main .recent-orders a{
 }
 /* ==============MEDIA QUERY============ */
 @media screen and (max-width:768px){
-    .container{
+    .box{
         width: 100%;
         grid-template-columns: 1fr;
     }
@@ -511,14 +512,14 @@ main .recent-orders a{
     aside .logo h2{
         display: inline;
     } 
-    aside .sidebar h3{
+    aside .menuside h3{
         display: inline;
     }
-    aside .sidebar a{
+    aside .menuside a{
         width: 100%;
         height: 3.4rem;
     }
-    aside .sidebar a:last-child{
+    aside .menuside a:last-child{
         position: absolute;
         bottom: 5rem;
     }

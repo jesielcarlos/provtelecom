@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'apps.profileUser',
     'apps.finance',
     'apps.callSystem',
+    'apps.services',
 ]
 
 SITE_ID = 1

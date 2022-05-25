@@ -6,7 +6,11 @@ class ProfileUserForm(forms.ModelForm):
     class Meta:
         model = ProfileUser
         fields = (
-            'user',
-            'theme_dark',
+            'email',
+            'city',
+            'district',
+            'address',
+            'number',
+            'cep'
         )
         exclude = ('active','dt_created',)

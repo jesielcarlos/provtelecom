@@ -20,4 +20,4 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         profile_form = form.save()
         messages.success(self.request, self.success_message)
-        return redirect('core:home')
+        return redirect('home')

@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% load i18n %}
+{% load bootstrap5 %}
+
 
 {% block title %}
    Perfil
@@ -21,9 +24,20 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="content">
-   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe possimus consequatur sequi maxime eligendi suscipit mollitia aut quam recusandae sint aperiam unde, ipsa labore? Et amet vel accusantium error facere. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aspernatur molestiae suscipit veniam, nam qui sed fugit quaerat, esse illo, distinctio doloremque dolor veritatis velit similique. Voluptas, ex blanditiis! Voluptate?
+    <form method="post" class="form">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="form-group">                    
+            <button type="button" class="btn btn-primary" onclick="this.disabled=true; this.form.submit();">
+                {% trans 'Salvar' %}
+            </button>
+            <a class="btn btn-danger" href="{% url 'home'  %}">{% trans 'Cancelar' %}</a>
+        </div>
+    </form>
 </div>
+
 {% endblock %}
 
 
