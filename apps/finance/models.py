@@ -42,3 +42,6 @@ class Contas(models.Model):
     dt_due = models.DateTimeField(verbose_name="Date Due")
     payment = models.IntegerField(verbose_name="Payment", choices=PAYMENTS)
     status = models.IntegerField(verbose_name="Status", choices=STATUS, default=OPEN)
+
+    def __str__(self):
+        return self.name
