@@ -6,6 +6,7 @@ class ProfileUserForm(forms.ModelForm):
     class Meta:
         model = ProfileUser
         fields = (
+            'service_plan',
             'email',
             'city',
             'district',

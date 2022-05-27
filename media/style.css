@@ -222,7 +222,7 @@ main .plans > div:hover{
     box-shadow: none;
 }
 main .plans > div span{
-    background: var(--color-success);
+    background: var(--color-danger);
     padding: 0.5rem;
     border-radius: 50%;
     color: var(--color-white);
