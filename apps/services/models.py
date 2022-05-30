@@ -4,11 +4,11 @@ from django.utils.translation import gettext as _
 
 
 class ServicePlan(models.Model):
-    INTENET = 0
+    INTERNET = 0
     VOIP = 1
 
     TYPES = (
-        (INTENET, _('Internet')),
+        (INTERNET, _('Internet')),
         (VOIP, _('Voip')),
 
     )

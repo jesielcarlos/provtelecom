@@ -32,7 +32,7 @@
             <button type="button" class="btn btn-primary" onclick="this.disabled=true; this.form.submit();">
                 {% trans 'Salvar' %}
             </button>
-            <a class="btn btn-danger" href="{% url 'home'  %}">{% trans 'Cancelar' %}</a>
+            <a class="btn btn-danger" href="{% url 'called'  %}">{% trans 'Cancelar' %}</a>
         </div>
     </form>
 </div>
@@ -41,5 +41,13 @@
 
 
 {% block scripts %}
+
+    <script>
+
+        const called = document.querySelector("#called")
+
+        called.classList.toggle("active");
+
+    </script>
 
 {% endblock %}

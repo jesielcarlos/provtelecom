@@ -159,7 +159,6 @@
         const theme = '{{theme}}'
         const themeToggler = document.querySelector(".theme-toggle");
         const dashboard = document.querySelector("#dashboard");
-        const profile = document.querySelector("#profile");
         const today = new Date(Date.now());
         const now = today.toLocaleDateString();
         const date = document.querySelector("#date")
@@ -177,9 +176,9 @@
             themeToggler.querySelector("span:nth-child(2)").classList.toggle("active");
         })
 
-        dashboard.addEventListener("click", () =>{
-            dashboard.classList.toggle("active");
-        })
+
+        dashboard.classList.toggle("active");
+
 
     </script>
 {% endblock %}

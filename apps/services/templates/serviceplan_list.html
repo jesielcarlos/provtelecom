@@ -45,7 +45,7 @@
 {% endblock %}
 
 {% block title_page %}
-    <h1>Chamados</h1>
+    <h1>Planos de Serviços</h1>
 {% endblock %}
 
 {% block content %}
@@ -65,28 +65,31 @@
         <br>
         <div>
             <button type="submit" class="button1">Buscar</button>
-            <a class="button2" href="{% url 'creat_called' %}">Criar Chamado</a>
         </div>
     </form>
     <table class="table">
         <thead>
-            <th>Titulo</th>
-            <th>Descrição</th>
             <th>Data de Criação</th>
-            <th>Status</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Tipo de Serviço</th>
+            <th>Velocidade</th>
+            <th>Largura de Banda</th>
         </thead>
         <tbody> 
-            {% for called in calleds %}
+            {% for service in services %}
             <tr>
-                <td>{{called.title}}</td>
-                <td>{{called.description}}</td>
-                <td>{{called.dt_created}}</td>
-                {% if called.situation == called.OPEN%}
-                    <td>Aberto</td>
-                {% elif called.situation == called.IN_PROGRESS%}
-                    <td>Em Andamento</td>
+                <td>{{service.dt_created}}</td>
+                <td>{{service.name}}</td>
+                <td>{{service.value}}</td>
+                {% if service.type_service == service.INTERNET %}
+                    <td>Internet</td>
+                    <td>{{service.velocity}}</td>
+                    <td></td>
                 {% else %}
-                    <td>Concluído</td>
+                    <td>Voip</td>
+                    <td>{{service.velocity}}</td>
+                    <td>{{service.bandwidth}}</td>
                 {% endif %}
             {% endfor %}
             </tr>
@@ -99,9 +102,9 @@
 
     <script>
 
-        const called = document.querySelector("#called")
+        const plans = document.querySelector("#plans")
 
-        called.classList.toggle("active");
+        plans.classList.toggle("active");
 
     </script>
 
