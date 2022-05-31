@@ -9,9 +9,10 @@
     .content {
     display: flex;
     flex-direction: column;
-    width: 800px;
+    width: 900px;
     margin: 0 auto;
     gap: 1.8rem;
+    padding: 2rem
     }
     .row{
         display: flex;
@@ -41,6 +42,14 @@
         cursor: pointer;
         margin-left: 5px;
     }
+    table thead{
+       background: var(--color-primary);
+    }
+    table tbody tr {
+        text-align: center;
+        background: var( --color-info-light);
+    }
+
 </style>
 {% endblock %}
 
@@ -51,22 +60,6 @@
 {% block content %}
 
 <div class="content">
-    <form action="" method="get">
-        <div class="row">
-            <div style="padding: 0.5em 0.5em">
-                <label for="inicio" style="font-size: 15px">Data inicio:</label>
-                <input autocomplete="off" {%if True%} selected {%endif%} name="dt_start" type="date" placeholder="Início" value="{{ dt_start }}">
-            </div>
-            <div style="padding: 0.5em 0.5em">
-                <label for="fim" style="font-size: 15px">Data fim:</label>
-                <input autocomplete="off" {%if True%} selected {%endif%} name="dt_end" type="date" placeholder="Fim" value="{{ dt_end }}">
-            </div>
-        </div>
-        <br>
-        <div>
-            <button type="submit" class="button1">Buscar</button>
-        </div>
-    </form>
     <table class="table">
         <thead>
             <th>Data de Criação</th>
@@ -79,7 +72,7 @@
         <tbody> 
             {% for service in services %}
             <tr>
-                <td>{{service.dt_created}}</td>
+                <td>{{service.dt_created | date:'d/m/Y'}}</td>
                 <td>{{service.name}}</td>
                 <td>{{service.value}}</td>
                 {% if service.type_service == service.INTERNET %}

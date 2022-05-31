@@ -37,6 +37,7 @@ class Contas(models.Model):
     dt_created = models.DateTimeField(verbose_name="Date Created", auto_now_add=True)
     profile = models.ForeignKey(ProfileUser, verbose_name="profile", on_delete=models.DO_NOTHING)
     payment_receipt = models.ForeignKey(PaymentReceipt, verbose_name="Payment Receipt", on_delete=models.DO_NOTHING, null=True, blank=True)
+    value = models.DecimalField(verbose_name="Value", max_digits=6, decimal_places=2)
     name = models.CharField(verbose_name="Name", max_length=150)
     dt_payment = models.DateTimeField(verbose_name="Date Payment", null=True, blank=True)
     dt_due = models.DateTimeField(verbose_name="Date Due")

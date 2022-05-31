@@ -41,7 +41,6 @@
         cursor: pointer;
         margin-left: 5px;
     }
-
     table thead{
        background: var(--color-primary);
     }
@@ -49,12 +48,11 @@
         text-align: center;
         background: var( --color-info-light);
     }
-
 </style>
 {% endblock %}
 
 {% block title_page %}
-    <h1>Chamados</h1>
+    <h1>Contas</h1>
 {% endblock %}
 
 {% block content %}
@@ -74,28 +72,33 @@
         <br>
         <div>
             <button type="submit" class="button1">Buscar</button>
-            <a class="button2" href="{% url 'creat_called' %}">Criar Chamado</a>
         </div>
     </form>
     <table class="table">
         <thead>
-            <th>Titulo</th>
-            <th>Descrição</th>
             <th>Data de Criação</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Data de Vencimento</th>>
+            <th>Data de Pagamento</th>
             <th>Status</th>
         </thead>
         <tbody> 
-            {% for called in calleds %}
+            {% for conta in contas %}
             <tr>
-                <td>{{called.title}}</td>
-                <td>{{called.description}}</td>
-                <td>{{called.dt_created | date:'d/m/Y'}}</td>
-                {% if called.situation == called.OPEN%}
-                    <td>Aberto</td>
-                {% elif called.situation == called.IN_PROGRESS%}
-                    <td>Em Andamento</td>
+                <td>{{conta.dt_created | date:'d/m/Y'}}</td>
+                <td>{{conta.name}}</td>
+                <td>{{conta.value}}</td>
+                <td>{{conta.dt_due | date:'d/m/Y'}}</td>
+                {% if conta.dt_payment %}
+                    <td>{{conta.dt_payment | date:'d/m/Y'}}</td>
                 {% else %}
-                    <td>Concluído</td>
+                    <td></td>
+                {% endif %}
+                {% if conta.status == conta.OPEN %}
+                    <td>Em Aberto</td>
+                {% else %}
+                    <td>Fechada</td>
                 {% endif %}
             {% endfor %}
             </tr>
@@ -108,9 +111,9 @@
 
     <script>
 
-        const called = document.querySelector("#called")
+        const contas = document.querySelector("#contas")
 
-        called.classList.toggle("active");
+        contas.classList.toggle("active");
 
     </script>
 

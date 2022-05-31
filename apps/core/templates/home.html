@@ -76,11 +76,11 @@
             <tr>
                 <td>{{conta.name}}</td>
                 {% if conta.dt_payment %}
-                    <td>{{conta.dt_payment}}</td>
+                    <td>{{conta.dt_payment | date:'d/m/Y'}}</td>
                 {% else %}
                 <td> </td> 
                 {% endif %}
-                <td>{{conta.dt_due}}</td>
+                <td>{{conta.dt_due | date:'d/m/Y'}}</td>
                 {% if conta.status %}
                     <td class="primary">Pago</td>
                     <td class="primary">

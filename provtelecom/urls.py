@@ -5,6 +5,7 @@ from django.conf import settings
 import apps.profileUser.urls
 import apps.callSystem.urls
 import apps.services.urls
+import apps.finance.urls
 
 urlpatterns = [
     path('', include('apps.core.urls')),
@@ -13,6 +14,7 @@ urlpatterns = [
     path('profileUser/', include('apps.profileUser.urls')),
     path('callSystem/', include('apps.callSystem.urls')),
     path('services/', include('apps.services.urls')),
+    path('finance/', include('apps.finance.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
