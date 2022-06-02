@@ -9,7 +9,6 @@
 {% block styles%}
 <style>
     .content {
-        border: 1px solid red;
     display: flex;
     flex-direction: row;
     width: 900px;
@@ -36,7 +35,6 @@
         margin-left: 5px;
     }
     form{
-        border: 1px solid red;
         width: 100%;
         align-items: center;
     }
@@ -50,6 +48,13 @@
     form p input{
         padding: 0.5rem;
         height: 25px;
+        background: var(--color-info-light);
+        border-radius: 7px;
+    }
+    form p select{
+        cursor: pointer;
+        padding: 0.5rem;
+        height: 30px;
         background: var(--color-info-light);
         border-radius: 7px;
     }

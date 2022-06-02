@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'apps.finance',
     'apps.callSystem',
     'apps.services',
+    'django_celery_results',
 ]
 
 SITE_ID = 1
@@ -94,7 +95,7 @@ DATABASES = {
         'NAME': 'provtelecom',
         'USER': 'postgres',
         'PASSWORD': '123',
-        'HOST': '192.168.0.104',
+        'HOST': '192.168.0.103',
         'PORT': '5432',
     }
 }
@@ -151,3 +152,11 @@ EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
 
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'http://127.0.0.1:8000/accounts/login/'
+
+CELERY_RESULT_BACKEND = 'django-db'
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'America/Recife'
