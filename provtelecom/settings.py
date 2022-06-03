@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'apps.callSystem',
     'apps.services',
     'django_celery_results',
+    'django_celery_beat',
 ]
 
 SITE_ID = 1
