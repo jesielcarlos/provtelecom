@@ -15,9 +15,9 @@ class HomeView(LoginRequiredMixin, View):
     def get(self, request):
         ctx = {}
         profile = ProfileUser.objects.get(user=request.user)
-        plans = ServicePlan.objects.filter(active=True).order_by('dt_created')
-        contas = Contas.objects.filter(active=True, profile=profile).order_by('dt_created')
-        calleds = Called.objects.filter(active=True, profile=profile).order_by('dt_created')
+        plans = ServicePlan.objects.filter(active=True).order_by('dt_created')[:3]
+        contas = Contas.objects.filter(active=True, profile=profile).order_by('dt_created')[:3]
+        calleds = Called.objects.filter(active=True, profile=profile).order_by('dt_created')[:3]
 
         ctx['plans'] = plans
         ctx['contas'] = contas

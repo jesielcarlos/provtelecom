@@ -146,8 +146,14 @@
             </div>
             <div class="right">
                 <div class="info">
-                    <h3>{{called.title}}</h3>
-                    <small class="text-muted">{{called.dt_created}}</small>
+                    {% if called.situation == called.CLOSED %}
+                        <h3>{{called.title}} - Fechado</h3>
+                    {% elif called.situation == called.IN_PROGRESS %} 
+                        <h3>{{called.title}} - Em Andamento</h3> 
+                    {% else %} 
+                        <h3>{{called.title}} - Aberto</h3>
+                    {%endif%}
+                    <small class="text-muted">{{called.dt_created | date:'d/m/Y'}}</small>
                 </div>
             </div>
         </div>
