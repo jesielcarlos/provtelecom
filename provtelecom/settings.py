@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'provtelecom.wsgi.application'
 
 DATABASES = {
     'default': decouple.config('DATABASE_URL',
-        default="postgres://user_provtelecom:jesiel021.@!@localhost:5432/provtelecom",
+        default="postgres://user_prov:jesiel021.@!@localhost:5432/provtelecom",
         cast=dj_database_url.parse)
 }
 
