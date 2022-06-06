@@ -579,3 +579,25 @@ main .recent-orders a{
     }
 }
 /* ==============MEDIA QUERY============ */
+
+/* ==============MESSAGES============ */
+
+.alert {
+    width: 100%;
+    height: 2rem;
+    font-weight: 500;
+    padding:0.3rem;
+    border-radius: var(--border-radius-1);
+}
+.alert-success{
+    background: var(--color-success);
+}
+.alert-warning{
+    background: var(--color-danger);
+}
+.alert-info{
+    background: var(--color-primary);
+}
+.alert-error{
+    background: var(--color-danger);
+}

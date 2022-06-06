@@ -11,7 +11,6 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     model = ProfileUser
     form_class= ProfileUserForm
     success_message = 'Perfil editado com sucesso'
-    warning_message = 'Erro na edição do perfil'
 
     def get_context_data(self, **kwargs):
         ctx = super(ProfileUpdateView, self).get_context_data(**kwargs)
@@ -20,4 +19,4 @@ class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     def form_valid(self, form):
         profile_form = form.save()
         messages.success(self.request, self.success_message)
-        return redirect('home')
+        return redirect('profile', pk=self.get_object().pk)

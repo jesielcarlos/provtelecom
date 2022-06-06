@@ -10,7 +10,7 @@ class ProfileUser(models.Model):
     active = models.BooleanField(verbose_name="Active", default=True)
     dt_created = models.DateTimeField(verbose_name="Date Created", auto_now_add=True)
     theme_dark = models.BooleanField(verbose_name="Theme Dark", default=True, null=True, blank=True)
-    service_plan = models.ForeignKey(ServicePlan, verbose_name="Service Plan", on_delete=models.DO_NOTHING)
+    service_plan = models.ForeignKey(ServicePlan, verbose_name="Plano de Serviço", on_delete=models.DO_NOTHING)
     email = models.EmailField(verbose_name="Email", null=True, blank=True)
     city = models.CharField(max_length=200, verbose_name="Cidade")
     address = models.CharField(max_length=200, verbose_name="Rua")

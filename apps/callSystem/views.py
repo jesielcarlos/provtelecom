@@ -5,7 +5,6 @@ from apps.callSystem.forms import CalledForm
 from apps.callSystem.models import Called
 from django.contrib import messages
 from django.views.generic import CreateView
-
 from apps.profileUser.models import ProfileUser
 
 
@@ -37,7 +36,6 @@ class CalledCreateView(LoginRequiredMixin, CreateView):
     model = Called
     form_class= CalledForm
     success_message = 'Chamado editado com sucesso'
-    warning_message = 'Erro na edição do chamado'
 
     def get_context_data(self, **kwargs):
         ctx = super(CalledCreateView, self).get_context_data(**kwargs)

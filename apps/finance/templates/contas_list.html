@@ -17,27 +17,26 @@
         display: flex;
         flex-direction: row;
     }
+    .row label{
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 500;
+
+    }
     .row input{
-        width: 100%;
-        height: 70%;
+        padding: 0.5rem;
+        height: 35px;
+        width:200px;
         background: var( --color-info-light);
         border-radius: 7px;
     }
     .button1{
+        margin-top: 10px;
         width: 10%;
-        padding: 0.3em;
-        font-weight: 500;
+        padding: 0.5em;
+        font-weight: 600;
         border-radius: 7px;
         background: var(--color-primary);
-        cursor: pointer;
-        margin-left: 5px;
-    }
-    .button2{
-        width: 15%;
-        padding: 0.3em;
-        font-weight: 500;
-        border-radius: 7px;
-        background: var(--color-success);
         cursor: pointer;
         margin-left: 5px;
     }
@@ -61,11 +60,11 @@
     <form action="" method="get">
         <div class="row">
             <div style="padding: 0.5em 0.5em">
-                <label for="inicio" style="font-size: 15px">Data inicio:</label>
+                <label for="inicio">Data inicio:</label>
                 <input autocomplete="off" {%if True%} selected {%endif%} name="dt_start" type="date" placeholder="Início" value="{{ dt_start }}">
             </div>
             <div style="padding: 0.5em 0.5em">
-                <label for="fim" style="font-size: 15px">Data fim:</label>
+                <label for="fim">Data fim:</label>
                 <input autocomplete="off" {%if True%} selected {%endif%} name="dt_end" type="date" placeholder="Fim" value="{{ dt_end }}">
             </div>
         </div>
@@ -79,7 +78,7 @@
             <th>Data de Criação</th>
             <th>Nome</th>
             <th>Valor</th>
-            <th>Data de Vencimento</th>>
+            <th>Data de Vencimento</th>
             <th>Data de Pagamento</th>
             <th>Status</th>
         </thead>
