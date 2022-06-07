@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 
 provtelecom.pem
+
+uwsgi.ini
+uwsgi_params
