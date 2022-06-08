@@ -132,3 +132,5 @@ provtelecom.pem
 
 uwsgi.ini
 uwsgi_params
+
+dump.rdb

@@ -425,7 +425,7 @@
     <div class="forms-container">
       <div class="signin-signup">
         <form class="login" method="POST" action="#">
-          <h2 class="title">{% trans "Sign In" %}</h2>
+          <h2 class="title">{% trans "Login" %}</h2>
           {% csrf_token %}
           <div class="input-field">
             <i class="fas fa-user"></i>
@@ -435,32 +435,26 @@
             <i class="fas fa-lock"></i>
             {{form.password}}
           </div>
-          <a class="button secondaryAction" href="#">{% trans "Forgot Password?" %}</a>
           <button class="btn solid" type="submit">{% trans "Login" %}</button>
           {% if form.errors %}
             <p class="alert alert-danger">
                 Verifique seu usuário e/ou senha.
             </p>
           {% endif %}
-          <p class="social-text">Or Sign in with social platforms</p>
+
           <div class="social-media">
-            <a href="" class="social-icon">
-              <i class="fab fa-google"></i>
-            </a>
+
         </form>
       </div>
     </div>
     <div class="panels-container">
       <div class="panel left-panel">
         <div class="content">
-          <h3>New here ?</h3>
+          <h3>Provtelecom</h3>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis,
             ex ratione. Aliquid!
           </p>
-          <button class="btn transparent" id="sign-up-btn">
-            <a href="{{ signup_url }}" style="text-decoration: none; color: #fff">{% trans "Sign Up" %}</a>
-          </button>
         </div>
       </div>
     </div>

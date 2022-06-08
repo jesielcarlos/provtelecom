@@ -41,7 +41,7 @@ class Contas(models.Model):
     name = models.CharField(verbose_name="Name", max_length=150)
     dt_payment = models.DateTimeField(verbose_name="Date Payment", null=True, blank=True)
     dt_due = models.DateTimeField(verbose_name="Date Due")
-    payment = models.IntegerField(verbose_name="Payment", choices=PAYMENTS)
+    payment = models.IntegerField(verbose_name="Payment", choices=PAYMENTS, null=True, blank=True)
     status = models.IntegerField(verbose_name="Status", choices=STATUS, default=OPEN)
 
     def __str__(self):
