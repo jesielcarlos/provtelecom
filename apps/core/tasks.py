@@ -6,9 +6,14 @@ from apps.profileUser.models import ProfileUser
 
 @shared_task
 def generate_contas():
+ 
+    test_date = datetime(datetime.now().year, datetime.now().month, datetime.now().day) 
+    nxt_mnth = test_date.replace(day=28) + datetime.timedelta(days=4)
+    res = nxt_mnth - datetime.timedelta(days=nxt_mnth.day)
+    
     profiles = ProfileUser.objects.filter(active=True)
     for profile in profiles:
-        date = '30'+'/'+str(datetime.now().month)+'/'+str(datetime.now().year)
+        date = str(res.day)+'/'+str(datetime.now().month)+'/'+str(datetime.now().year)
         hour = str(datetime.now().hour) +':'+ str(datetime.now().minute) +':'+ str(datetime.now().second)
         # date = date +' '+ hour
         conta = Contas()
