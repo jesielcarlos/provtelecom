@@ -2,11 +2,11 @@ from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from django.views.generic import DetailView
-from django_weasyprint import WeasyTemplateResponseMixin
 from apps.callSystem.models import Called
 from apps.finance.models import Contas
 from apps.profileUser.models import ProfileUser
 from apps.services.models import ServicePlan
+from django.views.generic import ListView
 
 
 class HomeView(LoginRequiredMixin, View):
@@ -26,5 +26,11 @@ class HomeView(LoginRequiredMixin, View):
         return render(request, self.template_name, ctx)
 
 
-class ContractView(LoginRequiredMixin, WeasyTemplateResponseMixin, DetailView):
-    pass
+class ContractView(LoginRequiredMixin, ListView):
+    model = ProfileUser
+    template_name = 'contrato_impressao.html'
+
+    def get_queryset(self):
+        qs = ProfileUser.objects.filter(active=True)
+
+        return qs
