@@ -102,33 +102,17 @@
 {% block updates %}
     <h2>Informações e Avisos</h2>
     <div class="updates">
+        {% for alert in alerts %}
         <div class="update">
             <div class="profile-photo">
                 <span class="material-symbols-outlined">notifications</span>
             </div>
             <div class="messege">
-                <p><b>Mike Tyson</b> received his order of Night lion tech GPS drone.</p>
-                <small class="text-muted">2 Minutes ago</small>
+                <p><b>{{alert.title}}</b> - {{alert.content}}</p>
+                <small class="text-muted">{{alert.dt_created | date:'d/m/Y'}}</small>
             </div>
         </div>
-        <div class="update">
-            <div class="profile-photo">
-                <span class="material-symbols-outlined">notifications</span>
-            </div>
-            <div class="messege">
-                <p><b>Mike Tyson</b> received his order of Night lion tech GPS drone.</p>
-                <small class="text-muted">2 Minutes ago</small>
-            </div>
-        </div>
-        <div class="update">
-            <div class="profile-photo">
-                <span class="material-symbols-outlined">notifications</span>
-            </div>
-            <div class="messege">
-                <p><b>Mike Tyson</b> received his order of Night lion tech GPS drone.</p>
-                <small class="text-muted">2 Minutes ago</small>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 {% endblock %}
 {% block analytics %}

@@ -5,6 +5,7 @@ from apps.callSystem.forms import CalledForm
 from apps.callSystem.models import Called
 from django.contrib import messages
 from django.views.generic import CreateView
+from apps.core.models import Alerts
 from apps.profileUser.models import ProfileUser
 
 
@@ -45,5 +46,12 @@ class CalledCreateView(LoginRequiredMixin, CreateView):
         called_form = form.save(commit=False)
         called_form.profile = ProfileUser.objects.get(user=self.request.user)
         called_form.save()
+
+        alert = Alerts()
+        alert.profile = ProfileUser.objects.get(user=self.request.user)
+        alert.title = 'Chamado criado'
+        alert.content = called_form.description
+        alert.save()
+
         messages.success(self.request, self.success_message)
         return redirect('called')

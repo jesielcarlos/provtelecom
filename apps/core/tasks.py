@@ -1,5 +1,6 @@
 from datetime import datetime
 from celery import shared_task
+from apps.core.models import Alerts
 from apps.finance.models import Contas
 from apps.profileUser.models import ProfileUser
 
@@ -14,14 +15,18 @@ def generate_contas():
     profiles = ProfileUser.objects.filter(active=True)
     for profile in profiles:
         date = str(res.day)+'/'+str(datetime.now().month)+'/'+str(datetime.now().year)
-        hour = str(datetime.now().hour) +':'+ str(datetime.now().minute) +':'+ str(datetime.now().second)
-        # date = date +' '+ hour
         conta = Contas()
         conta.profile = profile
         conta.value = profile.service_plan.value
         conta.name = 'Conta - '+ profile.service_plan.name
         conta.dt_due = datetime.strptime(date, '%d/%m/%Y')
         conta.save()
+
+        alert = Alerts()
+        alert.profile = profile
+        alert.title = 'Conta do mês gerada'
+        alert.content = 'Conta referente ao mês atual criada - vencimento: '+ str(datetime.strptime(date, '%d/%m/%Y'))
+        alert.save()
 
     return True
 
