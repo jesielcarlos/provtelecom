@@ -84,12 +84,12 @@
                 {% if conta.status %}
                     <td class="primary">Pago</td>
                     <td class="primary">
-                        <a href="#">Comprovante</a>
+                        <a href="{% url 'payment_receipt_print' pk=conta.pk %}" target="_blank">Comprovante</a>
                     </td>
                 {% else %}
                     <td class="warning">Pendente</td>
                     <td class="primary">
-                        <a href="#">Imprimir</a>
+                        <a href="{% url 'conta_print' pk=conta.pk %}" target="_blank">Imprimir</a>
                     </td>
                 {% endif %}
             </tr>
