@@ -7,6 +7,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="/media/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     {% block links %}{% endblock %}
     <title>
         {% block title %}{% endblock %}
@@ -105,7 +107,32 @@
         </div>
     </div>
     <script src="/media/index.js"></script>
+    <script>
+        const themeToggler = document.querySelector(".theme-toggle");
+        const setTheme = document.body;
+        var theme;
+        themeToggler.addEventListener("click", () => {
+            setTheme.classList.toggle("dark-theme-variables");
+            themeToggler.querySelector("span:nth-child(1)").classList.toggle("active");
+            themeToggler.querySelector("span:nth-child(2)").classList.toggle("active");
 
+            if(setTheme.classList.contains("dark-theme-variables")){
+                theme = "Dark";
+            }
+            else{
+                theme = "Light";
+            }
+
+            localStorage.setItem("PageTheme", JSON.stringify(theme));
+        })
+
+        var getTheme = JSON.parse(localStorage.getItem("PageTheme"));
+
+        if(getTheme === "Dark"){
+            document.body.classList = "dark-theme-variables";
+        }
+
+    </script>
     {% block scripts %}{% endblock %}
 </body>
 </html>
