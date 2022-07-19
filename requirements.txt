@@ -17,7 +17,6 @@ click-repl==0.2.0
 cryptography==37.0.2
 cssselect2==0.4.1
 ddsketch==2.0.2
-ddtrace==1.1.2
 defusedxml==0.7.1
 Deprecated==1.2.13
 dj-database-url==0.5.0
