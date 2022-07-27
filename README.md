@@ -1,2 +1,2 @@
 # provtelecom
-Sistema de gestão para provedores de internet
+Sistema de gestão para provedores de serviços de telecomunicações
