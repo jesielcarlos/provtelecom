@@ -28,6 +28,7 @@ django-celery-results==2.2.0
 django-timezone-field==4.2.3
 django-weasyprint==2.1.0
 fonttools==4.27.1
+gunicorn==20.1.0
 html5lib==1.1
 idna==3.3
 importlib-metadata==4.8.3
@@ -35,7 +36,6 @@ kombu==5.1.0
 oauthlib==3.2.0
 packaging==21.3
 Pillow==8.4.0
-pkg_resources==0.0.0
 prompt-toolkit==3.0.29
 protobuf==3.19.4
 psycopg2-binary==2.9.3
@@ -59,7 +59,6 @@ tenacity==8.0.1
 tinycss2==1.1.1
 typing_extensions==4.1.1
 urllib3==1.26.9
-uWSGI==2.0.20
 vine==5.0.0
 wcwidth==0.2.5
 weasyprint==54.3
